@@ -1,0 +1,27 @@
+<div>
+   <!--  <input type="text" [(ngModel)]="btnStatus"/>
+    {{btnStatus}}
+    <button [disabled]=btnStatus> Click Me </button> -->
+
+    <ul  *ngFor="let user of users">
+        <li *ngIf="btnStatus;else noDisplay">
+            {{user}}
+        </li>
+    </ul>
+
+    <ng-template #noDisplay>
+        <div>
+            <p>No Content to Display</p>
+        </div>
+    </ng-template>
+</div>
+<div>
+    <!--(change)="choise($event.target.value)"-->
+    <select (change)="choise($event)">
+        <option *ngFor="let country of countires" [value]="country.code">
+            {{country.name}}
+        </option>
+    </select>
+
+    {{selectedCountry}}
+</div>

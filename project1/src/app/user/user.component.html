@@ -1,0 +1,29 @@
+<!-- Data from Service call-->
+<app-communication1></app-communication1>
+<p>Message {{notificationMessage}}</p>
+<br/>
+<div *ngIf="userData!=null; else errorMsg">
+<table class="table table-bordered">
+  <tr class="bg-primary">
+    <td>Id</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Phone</td>
+    <td>Website</td>
+  </tr>
+  <tr *ngFor="let user of userData">
+    <td><a [routerLink]="['/user',user.id]"> {{user.id}}</a> </td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.website}}</td>
+  </tr>
+</table> 
+</div>
+
+<div>
+  <ng-template #errorMsg>
+    <p class="alert alert-danger text-center"> Internal Error </p>
+  </ng-template>
+</div>
+
