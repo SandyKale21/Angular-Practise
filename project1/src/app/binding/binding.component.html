@@ -1,0 +1,18 @@
+<!--Interpolation -->
+<p>Message from I {{message}}</p>
+<img src={{imgUrl}}/>
+<button disabled={{btnStatus}}>On CLick</button>
+<br/>
+<!-- property binding-->
+<img [src]="imgUrl"/>
+<button [disabled]="btnStatus">On CLick</button>
+
+<!-- event binding -->
+<button (click)="changeTitle()">Change Title </button>
+
+<input type="text" [(ngModel)]="userName"/>
+
+<h4>Welcome {{userName}} </h4>
+
+
+
